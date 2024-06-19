@@ -4,6 +4,6 @@ fetch("https://hplussport.com/api/products")
 })
 .then(function(jsonData) {
     console.log(jsonData);
-    var description = jsonData[0].description;
-    console.log(description);
+    var name = jsonData[0].name;
+    console.log(name);
 })
