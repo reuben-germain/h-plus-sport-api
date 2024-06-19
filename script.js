@@ -6,4 +6,6 @@ fetch("https://hplussport.com/api/products")
     console.log(jsonData);
     var name = jsonData[0].name;
     console.log(name);
+
+    var product = document.createElement("li");
 })
