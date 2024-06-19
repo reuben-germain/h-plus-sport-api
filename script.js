@@ -1,13 +1,17 @@
-fetch("https://hplussport.com/api/products")
+fetch("https://hplussport.com/api/products?order=name")
 .then(function(response) {
     return response.json();
 })
 .then(function(jsonData) {
-    console.log(jsonData);
-    var name = jsonData[0].name;
-    console.log(name);
+    for(items in jsonData) {
+        var productName = jsonData[items].name;
+        var products = document.createElement("li");
+        products.innerHTML = productName;
+        document.body.appendChild(products);
 
-    var product = document.createElement("li");
-    product.innerHTML = name;
-    document.body.appendChild(product);
-})
+        var productImage = jsonData[items].image;
+        var image = document.createElement("img");
+        image.setAttribute("src", productImage);
+        document.body.appendChild(image);
+    }
+});
