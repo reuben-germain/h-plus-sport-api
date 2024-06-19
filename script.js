@@ -8,4 +8,6 @@ fetch("https://hplussport.com/api/products")
     console.log(name);
 
     var product = document.createElement("li");
+    product.innerHTML = name;
+    document.body.appendChild(product);
 })
